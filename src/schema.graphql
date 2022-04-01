@@ -1,0 +1,15 @@
+type Query{
+    film: Film!,
+    films:[Film!]!
+}
+
+type Film{
+    id: ID!,
+    imdbID: String!,
+    poster: String,
+    actors: [Actor]
+}
+
+type Actor{
+    name: String!
+}
