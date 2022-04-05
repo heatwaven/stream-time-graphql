@@ -1,6 +1,6 @@
 const { RESTDataSource } = require('apollo-datasource-rest');
 
-class TrackAPI extends RESTDataSource {
+class OmdbAPI extends RESTDataSource {
 
     constructor() {
         super();
@@ -10,5 +10,9 @@ class TrackAPI extends RESTDataSource {
     getMoviesBySearch(search) {
         return this.get(`?s=${search}&apikey=${process.env.API_KEY}`);
     }
+
+    getMovieByID(id){
+        return this.get(`?i=${id}&apikey=${process.env.API_KEY}`);
+    }
 }
-module.exports = TrackAPI;
+module.exports = OmdbAPI;

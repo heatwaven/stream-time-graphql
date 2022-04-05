@@ -1,11 +1,11 @@
 type Query{
-    film: Film!,
-    films:[Film!]!
+    film(id:String): Film!,
+    films(search:String):[Film!]!
 }
 
 type Film{
-    id: ID!,
     imdbID: String!,
+    title:String!
     poster: String,
     actors: [Actor]
 }
