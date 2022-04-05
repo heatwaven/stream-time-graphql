@@ -1,27 +1,20 @@
-const poster = (parent) => {
-    return parent.Poster;
-}
+const poster = (parent) => parent.Poster;
 
-const title = (parent) => {
-    return parent.Title
-}
+const title = (parent) => parent.Title
 
-const imdbID = (parent) => {
-    return parent.imdbID;
-}
+const imdbID = (parent) => parent.imdbID;
 
-const type = (parent) =>{
-    return parent.Type
-}
+const type = (parent) => parent.Type
 
-const released = (parent)=>{
-    return parent.Released;
-}
+const released = (parent) => parent.Released;
+
+const year = (parent) => parent.Year;
 
 module.exports = {
     poster,
     title,
     imdbID,
     type,
-    released
+    released,
+    year
 }

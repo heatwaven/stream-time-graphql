@@ -1,5 +1,5 @@
-const films = async (_, args, { dataSources }) => {
-    let data = await dataSources.omdbAPI.getMoviesBySearch(args.search);
+const films = async (_, { search, year, type }, { dataSources }) => {
+    let data = await dataSources.omdbAPI.getMoviesBySearch(search, year, type);
     return data.Search;
 };
 

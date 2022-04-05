@@ -1,16 +1,11 @@
-const { ApolloServer } = require('apollo-server');
-const fs = require('fs');
-const path = require('path');
-const OmdbAPI = require('./datasources/omdbApi');
 require('dotenv').config();
 
-const Query = require('./resolvers/Query');
-const Film = require('./resolvers/Film');
+const { ApolloServer } = require('apollo-server');
+const OmdbAPI = require('./datasources/omdbApi');
+const fs = require('fs');
+const path = require('path');
 
-const resolvers = {
-    Query,
-    Film
-}
+const resolvers = require('./resolvers');
 
 
 const server = new ApolloServer({
@@ -20,10 +15,10 @@ const server = new ApolloServer({
     ),
     resolvers,
     dataSources: () => {
-        return{
-           omdbAPI: new OmdbAPI()
+        return {
+            omdbAPI: new OmdbAPI()
         }
-    }
+    },
 });
 
 server.listen().then(({ url }) => console.log("run at " + url))

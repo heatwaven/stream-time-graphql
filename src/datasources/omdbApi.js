@@ -7,11 +7,11 @@ class OmdbAPI extends RESTDataSource {
         this.baseURL = ' http://www.omdbapi.com/';
     }
 
-    getMoviesBySearch(search) {
-        return this.get(`?s=${search}&apikey=${process.env.API_KEY}`);
+    getMoviesBySearch(search, year = "", type = "") {
+        return this.get(`?s=${search}&apikey=${process.env.API_KEY}&y=${year}&type=${type}`);
     }
 
-    getMovieByID(id){
+    getMovieByID(id) {
         return this.get(`?i=${id}&apikey=${process.env.API_KEY}`);
     }
 }
