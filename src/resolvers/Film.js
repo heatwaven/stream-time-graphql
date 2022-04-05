@@ -10,8 +10,18 @@ const imdbID = (parent) => {
     return parent.imdbID;
 }
 
+const type = (parent) =>{
+    return parent.Type
+}
+
+const released = (parent)=>{
+    return parent.Released;
+}
+
 module.exports = {
     poster,
     title,
-    imdbID
+    imdbID,
+    type,
+    released
 }

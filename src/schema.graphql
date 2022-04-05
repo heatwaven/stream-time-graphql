@@ -7,7 +7,9 @@ type Film{
     imdbID: String!,
     title:String!
     poster: String,
-    actors: [Actor]
+    actors: [Actor],
+    type: String,
+    released: String
 }
 
 type Actor{

@@ -5,7 +5,6 @@ const films = async (_, args, { dataSources }) => {
 
 const film = async (_, args, { dataSources }) => {
     let data = await dataSources.omdbAPI.getMovieByID(args.id);
-    console.log(data);
     return data;
 };
 
